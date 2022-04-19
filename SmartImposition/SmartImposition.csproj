@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D9030271-59E3-43D3-89E2-E7BBAA27CDC4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SmartImposition</RootNamespace>
+    <AssemblyName>SmartImposition</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PDFlib_dotnet, Version=9.3.0.0, Culture=neutral, PublicKeyToken=af0805f2b25bb299, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\_Components\PDFLIB\9.3.0\64\PDFlib_dotnet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\AutomateSimple.cs" />
+    <Compile Include="Controllers\AutomateSimpleNone.cs" />
+    <Compile Include="Controllers\ImpositionAutomate.cs" />
+    <Compile Include="Controllers\ImpositionController.cs" />
+    <Compile Include="Controllers\InputFileController.cs" />
+    <Compile Include="Controllers\MarkController.cs" />
+    <Compile Include="Controllers\OutputController.cs" />
+    <Compile Include="Controllers\OutputSimpleController.cs" />
+    <Compile Include="Controllers\TemplateController.cs" />
+    <Compile Include="Drawers\PdfDrawer.cs" />
+    <Compile Include="Extensions\InputPageExtension.cs" />
+    <Compile Include="Extensions\TemplateBlockExtension.cs" />
+    <Compile Include="Extensions\TemplatePageExtensions.cs" />
+    <Compile Include="Extensions\TemplatePressSheetExtentions.cs" />
+    <Compile Include="Handbook\ImpositionHb.cs" />
+    <Compile Include="Interfaces\IImposer.cs" />
+    <Compile Include="Interfaces\IInputFileController.cs" />
+    <Compile Include="Interfaces\IMarkController.cs" />
+    <Compile Include="Interfaces\IOutputController.cs" />
+    <Compile Include="Interfaces\IOutputDocument.cs" />
+    <Compile Include="Interfaces\IOutputDraw.cs" />
+    <Compile Include="Interfaces\IOutputDrawer.cs" />
+    <Compile Include="Interfaces\IOutputMark.cs" />
+    <Compile Include="Interfaces\IPdfPage.cs" />
+    <Compile Include="Interfaces\ITemplateMark.cs" />
+    <Compile Include="Models\Enums\AnchorPointEnum.cs" />
+    <Compile Include="Models\Enums\BindingTypeEnum.cs" />
+    <Compile Include="Models\Enums\CutMarkEnum.cs" />
+    <Compile Include="Models\Enums\RotateEnum.cs" />
+    <Compile Include="Models\Enums\TemplatePressSheetPrintTypeEnum.cs" />
+    <Compile Include="Models\ImpositionSettings.cs" />
+    <Compile Include="Models\Input\InputDocument.cs" />
+    <Compile Include="Models\Input\InputPage.cs" />
+    <Compile Include="Models\Input\PageBox.cs" />
+    <Compile Include="Models\Input\PageFormat.cs" />
+    <Compile Include="Models\Output\AssignedDocument.cs" />
+    <Compile Include="Models\Output\OutputDocument.cs" />
+    <Compile Include="Models\Output\OutputDrawBack.cs" />
+    <Compile Include="Models\Output\OutputDrawFront.cs" />
+    <Compile Include="Models\Output\OutputDrawWorkAndTurn.cs" />
+    <Compile Include="Models\Output\OutputLineMark.cs" />
+    <Compile Include="Models\Output\OutputMarkAbstract.cs" />
+    <Compile Include="Models\Output\OutputPdfMark.cs" />
+    <Compile Include="Models\Output\OutputPdfPage.cs" />
+    <Compile Include="Models\Output\OutputPage.cs" />
+    <Compile Include="Models\Output\PressSheet.cs" />
+    <Compile Include="Models\Output\PressSheetSettings.cs" />
+    <Compile Include="Models\Templates\TemplateColorMark.cs" />
+    <Compile Include="Models\Templates\TemplateContainer.cs" />
+    <Compile Include="Models\Templates\TemplateFormat.cs" />
+    <Compile Include="Models\Templates\TemplateGutters.cs" />
+    <Compile Include="Models\Templates\TemplateLineMark.cs" />
+    <Compile Include="Models\Templates\TemplateMarkAbstract.cs" />
+    <Compile Include="Models\Templates\TemplateMarkPdf.cs" />
+    <Compile Include="Models\Templates\TemplateNumeration.cs" />
+    <Compile Include="Models\Templates\TemplatePage.cs" />
+    <Compile Include="Models\Templates\TemplatePageBlock.cs" />
+    <Compile Include="Models\Templates\TemplatePageBlockSettings.cs" />
+    <Compile Include="Models\Templates\TemplatePageIndex.cs" />
+    <Compile Include="Models\Templates\TemplatePosition.cs" />
+    <Compile Include="Models\Templates\TemplatePressSheet.cs" />
+    <Compile Include="Models\Templates\TemplatePressSheetSettings.cs" />
+    <Compile Include="Models\Templates\TemplateRunItem.cs" />
+    <Compile Include="Models\Templates\TemplateRunList.cs" />
+    <Compile Include="Models\Templates\TemplateSidePosition.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SmartImposition.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
